@@ -96,6 +96,7 @@
         [self slideOutAnimate];
     }
 }
+
 - (void)setLeftViewController:(UIViewController *)leftViewController {
     _leftViewController = leftViewController;
     UIView *view = self.leftViewController.view;
@@ -110,7 +111,6 @@
     self.leftViewController.view.frame = rect;
     self.leftViewController.view.alpha = 0;
 }
-
 
 - (void)rootIsSCrolling:(BOOL)isScroll {
     UIViewController *mainViewcontroller = nil;

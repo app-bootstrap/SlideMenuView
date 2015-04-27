@@ -26,7 +26,7 @@ DerivedData
 Pods/
 
 #temp
-*.swp
-*.swo
 .DS_Store
 Thumbs.db
+*.sw*
+*.un~

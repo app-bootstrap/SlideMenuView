@@ -15,9 +15,10 @@
 @interface MenuViewController () <UITableViewDataSource,UITableViewDelegate>
 @property(strong,nonatomic)UITableView *tableview;
 @property(strong,nonatomic)UIButton *settingButton;
-@property(nonatomic, strong) NSArray *titles;
-@property(nonatomic, assign) CGFloat avatarViewWidth;
-@property(nonatomic, assign) CGFloat avatarViewHeight;
+@property(nonatomic, strong)NSArray *titles;
+@property(nonatomic, assign)CGFloat avatarViewWidth;
+@property(nonatomic, assign)CGFloat avatarViewHeight;
+@property(strong,nonatomic)FirstViewController *mainSide;
 @end
 
 @implementation MenuViewController
@@ -108,8 +109,11 @@
 
 - (void)launchFirstView {
     AppDelegate *app = [UIApplication sharedApplication].delegate;
-    FirstViewController *mainSide = [[FirstViewController alloc] init];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController: mainSide];
+    if (!self.mainSide) {
+        FirstViewController *mainSide = [[FirstViewController alloc] init];
+        self.mainSide = mainSide;
+    }
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController: _mainSide];
     app.slideMenu.rootViewController = nav;
 }
 

@@ -1,5 +1,4 @@
-SlideMenuView
-=============
+# SlideMenuView
 
 ## Preview
 
@@ -14,13 +13,13 @@ copy `SlideMenuView.h`, `SlideMenuView.m` into your project.
 
 Add the following import to the top of the file:
 
-```objc
+``` objc
 #import "SlideMenuView.h"
 ```
 
 ### Configuration
 
-```objc
+``` objc
 UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:mainSide];
 SlideMenuView *slideMenu = [[SlideMenuView alloc] initWithRootController:nav];
 ...
